@@ -1,0 +1,1115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>{c81eaf1a-0a54-410b-b45e-6b0db2e92897}</ProjectGuid>
+    <avrdevice>ATmega2560</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>eFall</AssemblyName>
+    <Name>eFall</Name>
+    <RootNamespace>eFall</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>
+    </OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <CacheFlash>true</CacheFlash>
+    <UncachedRange />
+    <BootSegment>0</BootSegment>
+    <preserveEEPROM>true</preserveEEPROM>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.50.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega2560 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega2560"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>_VMDEBUG=1</Value>
+      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>printf=iprintf</Value>
+      <Value>__MBED_NANO__</Value>
+      <Value>ARDUINO_ARCH_NRF52840</Value>
+      <Value>ARDUINO_ARDUINO_NANO33BLE</Value>
+      <Value>ARDUINO_ARCH_MBED_NANO</Value>
+      <Value>ARDUINO_LIBRARY_DISCOVERY_PHASE=0</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../eFall</Value>
+      <Value>C:/Users/fabio/Documents/Arduino/libraries/Arduino_LSM9DS1-1.1.0/src</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/libraries/Wire</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/mbed</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/USB</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/variants/ARDUINO_NANO33BLE</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated-avr-comp</Value>
+      <Value>prefixC:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>_VMDEBUG=1</Value>
+      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>printf=iprintf</Value>
+      <Value>__MBED_NANO__</Value>
+      <Value>ARDUINO_ARCH_NRF52840</Value>
+      <Value>ARDUINO_ARDUINO_NANO33BLE</Value>
+      <Value>ARDUINO_ARCH_MBED_NANO</Value>
+      <Value>ARDUINO_LIBRARY_DISCOVERY_PHASE=0</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../eFall</Value>
+      <Value>C:/Users/fabio/Documents/Arduino/libraries/Arduino_LSM9DS1-1.1.0/src</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/libraries/Wire</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/mbed</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/USB</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/variants/ARDUINO_NANO33BLE</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated-avr-comp</Value>
+      <Value>prefixC:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\include\</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>../../../eFall;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;C:/Program Files (x86)/Arduino/hardware/tools/avr//lib/gcc/avr/7.3.0/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include-fixed;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;{vm.intellisense.add-paths};C:/Users/fabio/Documents/Arduino/libraries/Arduino_LSM9DS1-1.1.0/src;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/Wire/src;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/Wire/src/utility;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/mbed;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/USB;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/variants/ARDUINO_NANO33BLE;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated-avr-comp;prefixC:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/libraries/Wire;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <config.Debug.customdebug_uno_debugger_type>universal</config.Debug.customdebug_uno_debugger_type>
+        <ValidatedAS7>1</ValidatedAS7>
+        <arduino.board.name>nano33ble</arduino.board.name>
+        <arduino.board.desc>Arduino Nano 33 BLE</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Nano 33 BLE
+build.core=arduino
+build.crossprefix=arm-none-eabi-
+build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+build.variant=ARDUINO_NANO33BLE
+build.mcu=cortex-m4
+build.extra_flags=
+build.architecture=cortex-m4
+build.fpu=-mfpu=fpv4-sp-d16
+build.float-abi=-mfloat-abi=softfp
+build.board=ARDUINO_NANO33BLE
+build.ldscript=linker_script.ld
+compiler.mbed.arch.define=-DARDUINO_ARCH_NRF52840
+compiler.mbed.defines={build.variant.path}/defines.txt
+compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+compiler.mbed.cflags={build.variant.path}/cflags.txt
+compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+compiler.mbed.includes={build.variant.path}/includes.txt
+compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+compiler.mbed="{build.variant.path}/libs/libmbed.a" "{build.variant.path}/libs/libcc_310_core.a" "{build.variant.path}/libs/libcc_310_ext.a" "{build.variant.path}/libs/libcc_310_trng.a"
+vid.0=0x2341
+pid.0=0x005a
+vid.1=0x2341
+pid.1=0x805a
+vid.2=0x2341
+pid.2=0x015a
+upload.tool=bossac
+upload.protocol=
+upload.use_1200bps_touch=true
+upload.wait_for_upload_port=true
+upload.native_usb=true
+upload.maximum_size=983040
+upload.maximum_data_size=262144
+bootloader.tool=openocd
+bootloader.extra_action.preflash=echo INFO:removed_mass-erase
+bootloader.config=-f target/nrf52.cfg
+bootloader.programmer=-f interface/cmsis-dap.cfg
+bootloader.file=nano33ble/bootloader.hex
+runtime.ide.path=C:\Program Files (x86)\Arduino
+runtime.os=windows
+build.system.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0\system
+runtime.ide.version=108013
+target_package=arduino
+target_platform=mbed_nano
+runtime.hardware.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano
+originalid=nano33ble
+version=2.2.0
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall
+compiler.warning_flags.all=-Wall -Wextra
+compiler.path={build.compiler_path}
+compiler.c.cmd={build.crossprefix}gcc
+compiler.c.flags=-c {compiler.warning_flags} -g3 -nostdlib "@{compiler.mbed.defines}" "@{compiler.mbed.cflags}" {compiler.mbed.arch.define} -MMD -mcpu={build.mcu} {build.float-abi} {build.fpu}
+compiler.c.elf.cmd={build.crossprefix}g++
+compiler.c.elf.flags=-Wl,--gc-sections {compiler.warning_flags} -Wl,--as-needed
+compiler.S.cmd={build.crossprefix}g++
+compiler.S.flags=-c -x assembler-with-cpp -mcpu={build.mcu} {build.fpu}
+compiler.cpp.cmd={build.crossprefix}g++
+compiler.cpp.flags=-c {compiler.warning_flags} -g3 -nostdlib "@{compiler.mbed.defines}" "@{compiler.mbed.cxxflags}" {compiler.mbed.arch.define} -MMD -mcpu={build.mcu} {build.float-abi} {build.fpu}
+compiler.ar.cmd={build.crossprefix}ar
+compiler.ar.flags=rcs
+compiler.objcopy.cmd=
+compiler.objcopy.eep.flags=
+compiler.elf2hex.bin.flags=-O binary
+compiler.elf2hex.hex.flags=-O ihex -R .eeprom
+compiler.elf2hex.cmd={build.crossprefix}objcopy
+compiler.ldflags=
+compiler.libraries.ldflags=
+compiler.size.cmd={build.crossprefix}size
+compiler.define=-DARDUINO=
+build.extra.startobjects=
+build.extra.endobjects=
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.S.extra_flags=
+compiler.cpp.extra_flags=
+compiler.ar.extra_flags=
+compiler.objcopy.eep.extra_flags=
+compiler.elf2hex.extra_flags=
+build.library_discovery_phase=0
+build.library_discovery_phase_flag=-DARDUINO_LIBRARY_DISCOVERY_PHASE={build.library_discovery_phase}
+build.usb_flags=
+build.zip.pattern={recipe.size.pattern}
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_ARCH_MBED {build.library_discovery_phase_flag} {build.extra_flags} {compiler.c.extra_flags} "-I{build.core.path}/api/deprecated" "-I{build.core.path}/api/deprecated-avr-comp" {includes} "-iprefix{build.core.path}" "@{compiler.mbed.includes}" -o "{object_file}" "{source_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_ARCH_MBED {build.library_discovery_phase_flag} {includes} {build.extra_flags} {compiler.cpp.extra_flags} "-I{build.core.path}/api/deprecated" "-I{build.core.path}/api/deprecated-avr-comp" "-iprefix{build.core.path}" "@{compiler.mbed.includes}" "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_ARCH_MBED {includes} {build.extra_flags} {compiler.cpp.extra_flags} "-I{build.core.path}/api/deprecated" "-I{build.core.path}/api/deprecated-avr-comp" "-iprefix{build.core.path}" "@{compiler.mbed.includes}" "{source_file}" -o "{object_file}"
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} "@{compiler.mbed.ldflags}" "-T{build.variant.path}/{build.ldscript}" "-Wl,-Map,{build.path}/{build.project_name}.map" --specs=nosys.specs {compiler.ldflags} -o "{build.path}/{build.project_name}.elf" {object_files} -Wl,--whole-archive "{build.path}/{archive_file}" {compiler.mbed} -Wl,--no-whole-archive -Wl,--start-group {compiler.mbed.extra_ldflags} {compiler.libraries.ldflags} -Wl,--end-group
+recipe.objcopy.eep.pattern=
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex.data=^(?:\.data|\.bss)\s+([0-9]+).*
+recipe.size.regex=^(?:\.data|\.text)\s+([0-9]+).*
+recipe.output.tmp_file={build.project_name}.bin
+recipe.output.save_file={build.project_name}.{build.variant}.bin
+tools.openocd.path={runtime.tools.openocd.path}
+tools.openocd.cmd=bin/openocd.exe
+tools.openocd.cmd.windows=bin/openocd.exe
+tools.openocd.upload.params.verbose=-d2
+tools.openocd.upload.params.quiet=-d0
+tools.openocd.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" {bootloader.programmer} {bootloader.config} -c "telnet_port disabled; init; reset init; halt; adapter speed 10000; program {{build.path}/{build.project_name}.elf}; reset run; shutdown"
+tools.openocd.program.params.verbose=-d2
+tools.openocd.program.params.quiet=-d0
+tools.openocd.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" {bootloader.programmer} {bootloader.config} -c "telnet_port disabled; init; reset init; halt; adapter speed 10000; program {{build.path}/{build.project_name}.elf}; reset run; shutdown"
+tools.openocd.erase.params.verbose=-d2
+tools.openocd.erase.params.quiet=-d0
+tools.openocd.erase.pattern=
+tools.openocd.bootloader.params.verbose=-d2
+tools.openocd.bootloader.params.quiet=-d0
+tools.openocd.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" {bootloader.programmer} {bootloader.config} -c "telnet_port disabled; init; reset init; halt; adapter speed 10000; {bootloader.extra_action.preflash}; program {{runtime.platform.path}/bootloaders/{bootloader.file}}; reset run; shutdown"
+tools.bossac.path={runtime.tools.bossac-1.9.1-arduino2.path}
+tools.bossac.cmd=bossac.exe
+tools.bossac.cmd.windows=bossac.exe
+tools.bossac.upload.params.verbose=-d
+tools.bossac.upload.params.quiet=
+tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U -i -e -w "{build.path}/{build.project_name}.bin" -R
+tools.stm32flash.cmd=stm32flash
+tools.stm32flash.path={runtime.platform.path}/tools/windows
+tools.stm32flash.path.macosx={runtime.platform.path}/tools/macosx
+tools.stm32flash.path.linux={runtime.platform.path}/tools/linux
+tools.stm32flash.upload.params.verbose=-v
+tools.stm32flash.upload.params.quiet=
+tools.stm32flash.upload.pattern="{path}/{cmd}" {serial.port} -e 1024 -b 2400 -w "{build.path}/{build.project_name}.bin"
+tools.stm32flash.program.params.verbose=-v
+tools.stm32flash.program.params.quiet=
+tools.stm32flash.program.pattern="{path}/{cmd}" {serial.port} -e 1024 -b 2400 -w "{build.path}/{build.project_name}.bin"
+tools.stm32flash.erase.params.verbose=-v
+tools.stm32flash.erase.params.quiet=
+tools.stm32flash.erase.pattern="{path}/{cmd}" {serial.port} -e 1024 -b 2400
+tools.dfu-util.path={runtime.tools.dfu-util.path}
+tools.dfu-util.cmd=dfu-util
+tools.dfu-util.upload.params.verbose=-d
+tools.dfu-util.upload.params.quiet=
+tools.dfu-util.upload.pattern="{path}/{cmd}" --device {upload.vid}:{upload.pid} -D "{build.path}/{build.project_name}.bin" -a{upload.interface} --dfuse-address={upload.address}:leave
+tools.picotool.path={runtime.tools.rp2040tools.path}
+tools.picotool.cmd=rp2040load
+tools.picotool.upload.params.verbose=-v
+tools.picotool.upload.params.quiet=
+tools.picotool.upload.pattern="{path}/{cmd}" {upload.verbose} -D "{build.path}/{build.project_name}.elf"
+tools.gdb.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+tools.gdb.cmd=arm-none-eabi-gdb.exe
+tools.gdb.cmd.windows=arm-none-eabi-gdb.exe
+tools.gdb.debug.pattern="{path}/{cmd}" --interpreter=mi2 -ex "set pagination off" --baud 115200 -ex "set target-charset ASCII" -ex "target remote {debug.port}" {build.path}/{build.project_name}.elf
+upload.verify=
+tools.vmopenocd.cmd=bin/openocd.exe
+tools.vmopenocd.cmd.windows=bin/openocd.exe
+tools.vmopenocd.debug.params.verbose=-d2
+tools.vmopenocd.debug.params.quiet=-d0
+tools.vmopenocd.debug.address=localhost:3333
+tools.vmopenocd.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.vmopenocd.scriptPath=-s "{path}/scripts/"
+tools.vmopenocd.logging=-l "{{build.path}/{build.project_name}_DebugOpenOCD.log}"
+tools.vmopenocd.boardCmd=
+tools.vmopenocd.targetCmd=
+tools.vmopenocd.initCmd=
+tools.vmopenocd.debug.pattern="{path}/{cmd}" {debug.verbose} {logging} {scriptPath} {boardCmd} {targetCmd} {initCmd}
+tools.vmopenocd.program.cmd=bin/openocd.exe
+tools.vmopenocd.program.cmd.windows=bin/openocd.exe
+tools.vmopenocd.program.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.vmopenocd.program.address=localhost:3333
+tools.vmopenocd.program.params.verbose=-d2
+tools.vmopenocd.program.params.quiet=-d0
+tools.vmopenocd.program.elf.message=****[vMicro]**** Uploading ELF :
+tools.vmopenocd.program.pattern="{path}/{cmd}" {program.verbose} {scriptPath} {boardCmd} {targetCmd} -c "echo -n {{program.elf.message}}" {programCmd}
+tools.atmelICE.protocol=
+tools.atmelICE.debug.cmd=arm-none-eabi-gdb.exe
+tools.atmelICE.debug.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.atmelICE.debug.pattern="{path}/{cmd}"
+tools.atmelICE.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.atmelICE.server.initCmd=-c "init"
+tools.atmelICE.server.boardCmd=-c "adapter driver cmsis-dap" -c "cmsis_dap_vid_pid 0x03eb 0x2141"
+tools.atmelICE.server.tool=vmopenocd
+tools.atmelICE.debug.server=vmopenocd
+tools.atmelICE.program.scriptPath=-s "{program.path}/scripts/"
+tools.atmelICE.program.boardCmd=-c "adapter driver cmsis-dap" -c "cmsis_dap_vid_pid 0x03eb 0x2141"
+tools.atmelICE.program.cmd=bin/openocd.exe
+tools.atmelICE.program.cmd.windows=bin/openocd.exe
+tools.atmelICE.program.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.atmelICE.program.address=localhost:3333
+tools.atmelICE.program.params.verbose=-d2
+tools.atmelICE.program.params.quiet=-d0
+tools.atmelICE.program.elf.message=****[vMicro]**** Uploading ELF :
+tools.atmelICE.program.pattern="{program.path}/{program.cmd}" {program.verbose} {program.scriptPath} {program.boardCmd} {program.targetCmd} -c "echo -n {{program.elf.message}}" {program.programCmd}
+tools.atmelICE.program.extra_params=
+tools.atmelICE.program.protocol=
+tools.atmelICE.erase.params.verbose=-d3
+tools.atmelICE.erase.params.quiet=-d0
+tools.atmelICE.erase.pattern=
+tools.jlink.cmd=arm-none-eabi-gdb.exe
+tools.jlink.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.jlink.pattern="{path}/{cmd}"
+tools.jlink.server.tool=vmopenocd
+tools.jlink.debug.server=vmopenocd
+tools.jlink.server.boardCmd=-f "interface/jlink.cfg"
+tools.jlink.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.jlink.server.initCmd=-c "init"
+tools.jlink.program.scriptPath=-s "{program.path}/scripts/"
+tools.jlink.program.boardCmd=-f "interface/jlink.cfg"
+tools.jlink.program.cmd=bin/openocd.exe
+tools.jlink.program.cmd.windows=bin/openocd.exe
+tools.jlink.program.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.jlink.program.address=localhost:3333
+tools.jlink.program.params.verbose=-d2
+tools.jlink.program.params.quiet=-d0
+tools.jlink.program.elf.message=****[vMicro]**** Uploading ELF :
+tools.jlink.program.pattern="{program.path}/{program.cmd}" {program.verbose} {program.scriptPath} {program.boardCmd} {program.targetCmd} -c "echo -n {{program.elf.message}}" {program.programCmd}
+tools.jlink.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.jlink.upload.boardCmd=-f "interface/jlink.cfg"
+tools.jlink.upload.cmd=bin/openocd.exe
+tools.jlink.upload.cmd.windows=bin/openocd.exe
+tools.jlink.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.jlink.upload.address=localhost:3333
+tools.jlink.upload.params.verbose=-d2
+tools.jlink.upload.params.quiet=-d0
+tools.jlink.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.jlink.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.bmp_upload.cmd=arm-none-eabi-gdb.exe
+tools.bmp_upload.debug.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
+tools.bmp_upload.program.cmd=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.program.cmd.windows=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.program.path={runtime.tools.arm-none-eabi-gcc.path}
+tools.bmp_upload.upload.cmd=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.upload.cmd.windows=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.upload.path={runtime.tools.arm-none-eabi-gcc.path}
+tools.bmp_upload.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.bmp_upload.server.initCmd=-c "init"
+tools.bmp_upload.showLocalSerialPort=true
+tools.bmp_upload.debug.server=
+tools.stlinkv2.description=
+tools.stlinkv2.cmd=arm-none-eabi-gdb.exe
+tools.stlinkv2.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.stlinkv2.pattern="{path}/{cmd}"
+tools.stlinkv2.server.tool=vmopenocd
+tools.stlinkv2.debug.server=vmopenocd
+tools.stlinkv2.server.boardCmd=-f "interface/stlink.cfg"
+tools.stlinkv2.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.stlinkv2.server.initCmd=-c "init"
+tools.stlinkv2.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.stlinkv2.upload.boardCmd=-f "interface/stlink.cfg"
+tools.stlinkv2.upload.cmd=bin/openocd.exe
+tools.stlinkv2.upload.cmd.windows=bin/openocd.exe
+tools.stlinkv2.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.stlinkv2.upload.address=localhost:3333
+tools.stlinkv2.upload.params.verbose=-d2
+tools.stlinkv2.upload.params.quiet=-d0
+tools.stlinkv2.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.stlinkv2.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.stlinkv2.upload.extra_params=
+tools.stlinkv2.upload.protocol=
+tools.stlinkv2.protocol=
+tools.f2232mm.cmd=arm-none-eabi-gdb.exe
+tools.f2232mm.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.f2232mm.pattern="{path}/{cmd}" {args}
+tools.f2232mm.server.tool=vmopenocd
+tools.f2232mm.debug.server=vmopenocd
+tools.f2232mm.server.boardCmd=-f "interface/ftdi/minimodule.cfg"
+tools.f2232mm.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.f2232mm.server.initCmd=-c "init"
+tools.f2232mm.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.f2232mm.upload.boardCmd=-f "interface/ftdi/minimodule.cfg"
+tools.f2232mm.upload.cmd=bin/openocd.exe
+tools.f2232mm.upload.cmd.windows=bin/openocd.exe
+tools.f2232mm.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.f2232mm.upload.address=localhost:3333
+tools.f2232mm.upload.params.verbose=-d2
+tools.f2232mm.upload.params.quiet=-d0
+tools.f2232mm.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.f2232mm.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.f2232mm.upload.extra_params=
+tools.f2232mm.upload.protocol=
+tools.f2232mm.protocol=
+tools.f2232h.server.boardCmd=-f "interface/ftdi/minimodule-lowcost.cfg"
+tools.f2232h.cmd=arm-none-eabi-gdb.exe
+tools.f2232h.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.f2232h.pattern="{path}/{cmd}"
+tools.f2232h.server.tool=vmopenocd
+tools.f2232h.debug.server=vmopenocd
+tools.f2232h.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.f2232h.server.initCmd=-c "init"
+tools.f2232h.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.f2232h.upload.boardCmd=-f "interface/ftdi/minimodule-lowcost.cfg"
+tools.f2232h.upload.cmd=bin/openocd.exe
+tools.f2232h.upload.cmd.windows=bin/openocd.exe
+tools.f2232h.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.f2232h.upload.address=localhost:3333
+tools.f2232h.upload.params.verbose=-d2
+tools.f2232h.upload.params.quiet=-d0
+tools.f2232h.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.f2232h.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.f2232h.upload.extra_params=
+tools.f2232h.upload.protocol=
+tools.f2232h.protocol=
+vm.platform.root.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\zqkm1q4o.1e0\Micro Platforms\arduino16x
+cmsis-dap.name=ARM CMSIS-DAP compatible
+cmsis-dap.communication=USB
+cmsis-dap.protocol=
+cmsis-dap.program.protocol=
+cmsis-dap.program.tool=openocd
+cmsis-dap.program.extra_params=
+stlink.name=STMicroelectronics STLINK
+stlink.communication=USB
+stlink.protocol=
+stlink.program.protocol=
+stlink.program.tool=openocd
+stlink.program.extra_params=
+runtime.tools.openocd.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\openocd\0.11.0-arduino2
+runtime.tools.openocd-0.11.0-arduino2.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\openocd\0.11.0-arduino2
+runtime.tools.arm-none-eabi-gcc.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4
+runtime.tools.arm-none-eabi-gcc-7-2017q4.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4
+runtime.tools.bossac.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\bossac\1.9.1-arduino2
+runtime.tools.bossac-1.9.1-arduino2.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\bossac\1.9.1-arduino2
+runtime.tools.dfu-util.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\dfu-util\0.10.0-arduino1
+runtime.tools.dfu-util-0.10.0-arduino1.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\dfu-util\0.10.0-arduino1
+runtime.tools.rp2040tools.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\rp2040tools\1.0.2
+runtime.tools.rp2040tools-1.0.2.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\rp2040tools\1.0.2
+runtime.tools.arduinoOTA.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.arduinoOTA-1.3.0.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avrdude.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avrdude-6.3.0-arduino17.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc-7.3.0-atmel3.6.1-arduino7.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.tools-avr.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.vm.boardinfo.id=nano33ble
+runtime.vm.boardinfo.name=nano33ble
+runtime.vm.boardinfo.desc=Arduino Nano 33 BLE
+runtime.vm.boardinfo.src_location=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0
+ide.hint=Use installed IDE (hardware, reference/help + libraries)
+ide.location.key=Arduino16x
+ide.location.ide.winreg=Arduino 1.6.x Application
+ide.location.sketchbook.winreg=Arduino 1.6.x Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.default.revision_name=1.8.13
+ide.default.version=10800
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=Arduino.h
+ide.exe_name=arduino
+ide.recipe.preproc.defines.flags=-w -x c++ -E -dM
+ide.platformswithoutpackage=false
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionGTEQ=160
+ide.exe=arduino.exe
+ide.builder.exe=arduinobuilder.exe
+ide.builder.name=Arduino Builder
+ide.hosts=atmel
+ide.url=https://www.visualmicro.com/page/Download-Arduino-Or-Other-Supporting-IDEs.aspx
+ide.help.reference.path=reference
+ide.help.reference.path2=reference\www.arduino.cc\en\Reference
+ide.help.reference.serial=reference\www.arduino.cc\en\Serial
+ide.location.preferences.portable={runtime.ide.path}\portable
+ide.location.preferences.arduinoData={runtime.sketchbook.path}\ArduinoData
+ide.location.preferences=%VM_APPDATA_LOCAL%\arduino15\preferences.txt
+ide.location.preferences_fallback=%VM_APPDATA_ROAMING%\arduino15\preferences.txt
+ide.location.contributions=%VM_APPDATA_LOCAL%\arduino15
+ide.location.contributions_fallback=%VM_APPDATA_ROAMING%\arduino15
+ide.contributions.boards.allow=true
+ide.contributions.boards.ignore_unless_rewrite_found=true
+ide.contributions.libraries.allow=true
+ide.contributions.boards.support.urls.wiki=https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+ide.create_platforms_from_boardsTXT.teensy=build.core
+vm.debug=true
+software=ARDUINO
+ssh.user.name=root
+ssh.user.default.password=arduino
+ssh.host.wwwfiles.path=/www/sd
+build.working_directory={runtime.ide.path}\java\bin
+runtime.tools.vm_web_debugger.path={vm.platform.root.path}/../../Micro Debuggers/WebDebugger
+recipe.hooks.vmdeploy.vm_web_debugger_postupload.1.pattern="{runtime.tools.vm_web_debugger.path}/DeployMicroWebserver.exe" "{sketch_path}" "{serial.port}" "{runtime.hardware.path}\.."
+recipe.hooks.vmlaunch.vm_web_debugger_preopen.1.pattern=notepad.exe "{sketch_path}\__vm\vmWebDebugger\Start-WebServer.bat"
+recipe.hooks.vmlaunch.vm_web_debugger_preopen.2.pattern={sketch_path}\__vm\vmWebDebugger\Start-WebServer.bat
+ide.debug_menu.debugger_type=Debug
+ide.debug_menu.debugger_type.none=Off
+ide.debug_menu.none.debug.tool=no_debug
+ide.debug_menu.debugger_type.universal=Serial
+ide.debug_menu.universal.debug.tool=universal
+ide.debug_menu.debugger_type.hwdebugger=Hardware
+ide.debug_menu.hwdebugger=Debugger
+ide.debug_menu.hwdebugger.custom_debugger=Manual/Custom
+ide.debug_menu.hwdebugger.custom_debugger.debug.tool=dbg_external
+ide.meta_custom_debugger.sentence=Provides a build that includes debug defines and will launch a custom debugger if one is provided.
+ide.meta_custom_debugger.paragraph=This is option is for advanced use. It is recommended that a pre-configured debugger be selected when available in this list. Usage: Optionally add a customer debugger to the project. A 'debugger_launch.json' file shares the same command syntax that is used by the VsCode debugger. Custom debuggers can be targeted at a board and/or variant and/or configuration name. IE: [variant].[configuration_name][.]debugger_launch.json
+ide.meta_custom_debugger.reference.usage.url=https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md#customlaunchsetupcommands
+ide.meta_custom_debugger.reference.connect.url=https://docs.microsoft.com/en-us/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2019
+ide.compiler_flags_no_opt=-O0
+ide.debug_menu.vm_disable_optimization=Disable Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_default=Default Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj=No Project  Optimization
+ide.debug_menu.vm_disable_opt_proj.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj_libs=No Project + Libraries Optimization
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_all=No Optimization
+ide.meta_vm_disable_opt_all.sentence=Disable compiler optimization for all sources:- Project, Library and Platform.
+ide.meta_vm_disable_opt_all.comment=After switching between 'No Optimization' and other optimization values, please click "Solution Clean" or switch off (or cycle) 'vMicro&gt;Compiler&gt;Shared Cache For Cores'. NOTE: Changing optimization settings can cause build errors or result in overly large programs.
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_core={ide.compiler_flags_no_opt}
+ide.appid=arduino16x
+location.sketchbook=C:\Users\fabio\Documents\Arduino
+build.core.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0\cores\arduino
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0
+runtime.platform.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0
+vm.platformname.name=mbed_nano
+build.arch=MBED_NANO
+</arduino.board.property_bag>
+        <arduino.build.mcu>cortex-m4</arduino.build.mcu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.maximum_size>983040</arduino.upload.maximum_size>
+        <visualmicro.application.name>arduino16x</visualmicro.application.name>
+        <visualmicro.package.name>arduino</visualmicro.package.name>
+        <visualmicro.platform.name>mbed_nano</visualmicro.platform.name>
+        <config.Debug.customdebug_nano33ble_debugger_type>universal</config.Debug.customdebug_nano33ble_debugger_type>
+        <arduino.upload.port>COM5</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.Device>-mmcu=atmega2560 -B "%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega2560"</avrgcc.common.Device>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>_VMDEBUG=1</Value>
+      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>printf=iprintf</Value>
+      <Value>__MBED_NANO__</Value>
+      <Value>ARDUINO_ARCH_NRF52840</Value>
+      <Value>ARDUINO_ARDUINO_NANO33BLE</Value>
+      <Value>ARDUINO_ARCH_MBED_NANO</Value>
+      <Value>ARDUINO_LIBRARY_DISCOVERY_PHASE=0</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../eFall</Value>
+      <Value>C:/Users/fabio/Documents/Arduino/libraries/Arduino_LSM9DS1-1.1.0/src</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/libraries/Wire</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/mbed</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/USB</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/variants/ARDUINO_NANO33BLE</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated-avr-comp</Value>
+      <Value>prefixC:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -include=arduino.h</avrgcc.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>_VMDEBUG=1</Value>
+      <Value>ARDUINO=108013</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>printf=iprintf</Value>
+      <Value>__MBED_NANO__</Value>
+      <Value>ARDUINO_ARCH_NRF52840</Value>
+      <Value>ARDUINO_ARDUINO_NANO33BLE</Value>
+      <Value>ARDUINO_ARCH_MBED_NANO</Value>
+      <Value>ARDUINO_LIBRARY_DISCOVERY_PHASE=0</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../eFall</Value>
+      <Value>C:/Users/fabio/Documents/Arduino/libraries/Arduino_LSM9DS1-1.1.0/src</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/libraries/Wire</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/mbed</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/USB</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/variants/ARDUINO_NANO33BLE</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated-avr-comp</Value>
+      <Value>prefixC:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino</Value>
+      <Value>C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.miscellaneous.OtherFlags>-include=arduino.h</avrgcccpp.compiler.miscellaneous.OtherFlags>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\ATmega_DFP\1.6.364\include\</Value>
+    </ListValues>
+  </avrgcccpp.assembler.general.IncludePaths>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>../../../eFall;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/standard;C:/Program Files (x86)/Arduino/hardware/tools/avr//lib/gcc/avr/7.3.0/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include-fixed;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;{vm.intellisense.add-paths};C:/Users/fabio/Documents/Arduino/libraries/Arduino_LSM9DS1-1.1.0/src;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/Wire/src;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries/Wire/src/utility;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/mbed;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/USB;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/variants/ARDUINO_NANO33BLE;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino/api/deprecated-avr-comp;prefixC:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/cores/arduino;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano;C:/Users/fabio/AppData/Local/arduino15/packages/arduino/hardware/mbed_nano/2.2.0/libraries/Wire;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <config.Debug.customdebug_uno_debugger_type>universal</config.Debug.customdebug_uno_debugger_type>
+        <ValidatedAS7>1</ValidatedAS7>
+        <arduino.board.name>nano33ble</arduino.board.name>
+        <arduino.board.desc>Arduino Nano 33 BLE</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Nano 33 BLE
+build.core=arduino
+build.crossprefix=arm-none-eabi-
+build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+build.variant=ARDUINO_NANO33BLE
+build.mcu=cortex-m4
+build.extra_flags=
+build.architecture=cortex-m4
+build.fpu=-mfpu=fpv4-sp-d16
+build.float-abi=-mfloat-abi=softfp
+build.board=ARDUINO_NANO33BLE
+build.ldscript=linker_script.ld
+compiler.mbed.arch.define=-DARDUINO_ARCH_NRF52840
+compiler.mbed.defines={build.variant.path}/defines.txt
+compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+compiler.mbed.cflags={build.variant.path}/cflags.txt
+compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+compiler.mbed.includes={build.variant.path}/includes.txt
+compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+compiler.mbed="{build.variant.path}/libs/libmbed.a" "{build.variant.path}/libs/libcc_310_core.a" "{build.variant.path}/libs/libcc_310_ext.a" "{build.variant.path}/libs/libcc_310_trng.a"
+vid.0=0x2341
+pid.0=0x005a
+vid.1=0x2341
+pid.1=0x805a
+vid.2=0x2341
+pid.2=0x015a
+upload.tool=bossac
+upload.protocol=
+upload.use_1200bps_touch=true
+upload.wait_for_upload_port=true
+upload.native_usb=true
+upload.maximum_size=983040
+upload.maximum_data_size=262144
+bootloader.tool=openocd
+bootloader.extra_action.preflash=echo INFO:removed_mass-erase
+bootloader.config=-f target/nrf52.cfg
+bootloader.programmer=-f interface/cmsis-dap.cfg
+bootloader.file=nano33ble/bootloader.hex
+runtime.ide.path=C:\Program Files (x86)\Arduino
+runtime.os=windows
+build.system.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0\system
+runtime.ide.version=108013
+target_package=arduino
+target_platform=mbed_nano
+runtime.hardware.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano
+originalid=nano33ble
+version=2.2.0
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall
+compiler.warning_flags.all=-Wall -Wextra
+compiler.path={build.compiler_path}
+compiler.c.cmd={build.crossprefix}gcc
+compiler.c.flags=-c {compiler.warning_flags} -g3 -nostdlib "@{compiler.mbed.defines}" "@{compiler.mbed.cflags}" {compiler.mbed.arch.define} -MMD -mcpu={build.mcu} {build.float-abi} {build.fpu}
+compiler.c.elf.cmd={build.crossprefix}g++
+compiler.c.elf.flags=-Wl,--gc-sections {compiler.warning_flags} -Wl,--as-needed
+compiler.S.cmd={build.crossprefix}g++
+compiler.S.flags=-c -x assembler-with-cpp -mcpu={build.mcu} {build.fpu}
+compiler.cpp.cmd={build.crossprefix}g++
+compiler.cpp.flags=-c {compiler.warning_flags} -g3 -nostdlib "@{compiler.mbed.defines}" "@{compiler.mbed.cxxflags}" {compiler.mbed.arch.define} -MMD -mcpu={build.mcu} {build.float-abi} {build.fpu}
+compiler.ar.cmd={build.crossprefix}ar
+compiler.ar.flags=rcs
+compiler.objcopy.cmd=
+compiler.objcopy.eep.flags=
+compiler.elf2hex.bin.flags=-O binary
+compiler.elf2hex.hex.flags=-O ihex -R .eeprom
+compiler.elf2hex.cmd={build.crossprefix}objcopy
+compiler.ldflags=
+compiler.libraries.ldflags=
+compiler.size.cmd={build.crossprefix}size
+compiler.define=-DARDUINO=
+build.extra.startobjects=
+build.extra.endobjects=
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.S.extra_flags=
+compiler.cpp.extra_flags=
+compiler.ar.extra_flags=
+compiler.objcopy.eep.extra_flags=
+compiler.elf2hex.extra_flags=
+build.library_discovery_phase=0
+build.library_discovery_phase_flag=-DARDUINO_LIBRARY_DISCOVERY_PHASE={build.library_discovery_phase}
+build.usb_flags=
+build.zip.pattern={recipe.size.pattern}
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.c.flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_ARCH_MBED {build.library_discovery_phase_flag} {build.extra_flags} {compiler.c.extra_flags} "-I{build.core.path}/api/deprecated" "-I{build.core.path}/api/deprecated-avr-comp" {includes} "-iprefix{build.core.path}" "@{compiler.mbed.includes}" -o "{object_file}" "{source_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_ARCH_MBED {build.library_discovery_phase_flag} {includes} {build.extra_flags} {compiler.cpp.extra_flags} "-I{build.core.path}/api/deprecated" "-I{build.core.path}/api/deprecated-avr-comp" "-iprefix{build.core.path}" "@{compiler.mbed.includes}" "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.S.cmd}" {compiler.S.flags} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_ARCH_MBED {includes} {build.extra_flags} {compiler.cpp.extra_flags} "-I{build.core.path}/api/deprecated" "-I{build.core.path}/api/deprecated-avr-comp" "-iprefix{build.core.path}" "@{compiler.mbed.includes}" "{source_file}" -o "{object_file}"
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}"  "-L{build.path}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} "@{compiler.mbed.ldflags}" "-T{build.variant.path}/{build.ldscript}" "-Wl,-Map,{build.path}/{build.project_name}.map" --specs=nosys.specs {compiler.ldflags} -o "{build.path}/{build.project_name}.elf" {object_files} -Wl,--whole-archive "{build.path}/{archive_file}" {compiler.mbed} -Wl,--no-whole-archive -Wl,--start-group {compiler.mbed.extra_ldflags} {compiler.libraries.ldflags} -Wl,--end-group
+recipe.objcopy.eep.pattern=
+recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.bin.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.bin"
+recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex.data=^(?:\.data|\.bss)\s+([0-9]+).*
+recipe.size.regex=^(?:\.data|\.text)\s+([0-9]+).*
+recipe.output.tmp_file={build.project_name}.bin
+recipe.output.save_file={build.project_name}.{build.variant}.bin
+tools.openocd.path={runtime.tools.openocd.path}
+tools.openocd.cmd=bin/openocd.exe
+tools.openocd.cmd.windows=bin/openocd.exe
+tools.openocd.upload.params.verbose=-d2
+tools.openocd.upload.params.quiet=-d0
+tools.openocd.upload.pattern="{path}/{cmd}" {upload.verbose} -s "{path}/share/openocd/scripts/" {bootloader.programmer} {bootloader.config} -c "telnet_port disabled; init; reset init; halt; adapter speed 10000; program {{build.path}/{build.project_name}.elf}; reset run; shutdown"
+tools.openocd.program.params.verbose=-d2
+tools.openocd.program.params.quiet=-d0
+tools.openocd.program.pattern="{path}/{cmd}" {program.verbose} -s "{path}/share/openocd/scripts/" {bootloader.programmer} {bootloader.config} -c "telnet_port disabled; init; reset init; halt; adapter speed 10000; program {{build.path}/{build.project_name}.elf}; reset run; shutdown"
+tools.openocd.erase.params.verbose=-d2
+tools.openocd.erase.params.quiet=-d0
+tools.openocd.erase.pattern=
+tools.openocd.bootloader.params.verbose=-d2
+tools.openocd.bootloader.params.quiet=-d0
+tools.openocd.bootloader.pattern="{path}/{cmd}" {bootloader.verbose} -s "{path}/share/openocd/scripts/" {bootloader.programmer} {bootloader.config} -c "telnet_port disabled; init; reset init; halt; adapter speed 10000; {bootloader.extra_action.preflash}; program {{runtime.platform.path}/bootloaders/{bootloader.file}}; reset run; shutdown"
+tools.bossac.path={runtime.tools.bossac-1.9.1-arduino2.path}
+tools.bossac.cmd=bossac.exe
+tools.bossac.cmd.windows=bossac.exe
+tools.bossac.upload.params.verbose=-d
+tools.bossac.upload.params.quiet=
+tools.bossac.upload.pattern="{path}/{cmd}" {upload.verbose} --port={serial.port.file} -U -i -e -w "{build.path}/{build.project_name}.bin" -R
+tools.stm32flash.cmd=stm32flash
+tools.stm32flash.path={runtime.platform.path}/tools/windows
+tools.stm32flash.path.macosx={runtime.platform.path}/tools/macosx
+tools.stm32flash.path.linux={runtime.platform.path}/tools/linux
+tools.stm32flash.upload.params.verbose=-v
+tools.stm32flash.upload.params.quiet=
+tools.stm32flash.upload.pattern="{path}/{cmd}" {serial.port} -e 1024 -b 2400 -w "{build.path}/{build.project_name}.bin"
+tools.stm32flash.program.params.verbose=-v
+tools.stm32flash.program.params.quiet=
+tools.stm32flash.program.pattern="{path}/{cmd}" {serial.port} -e 1024 -b 2400 -w "{build.path}/{build.project_name}.bin"
+tools.stm32flash.erase.params.verbose=-v
+tools.stm32flash.erase.params.quiet=
+tools.stm32flash.erase.pattern="{path}/{cmd}" {serial.port} -e 1024 -b 2400
+tools.dfu-util.path={runtime.tools.dfu-util.path}
+tools.dfu-util.cmd=dfu-util
+tools.dfu-util.upload.params.verbose=-d
+tools.dfu-util.upload.params.quiet=
+tools.dfu-util.upload.pattern="{path}/{cmd}" --device {upload.vid}:{upload.pid} -D "{build.path}/{build.project_name}.bin" -a{upload.interface} --dfuse-address={upload.address}:leave
+tools.picotool.path={runtime.tools.rp2040tools.path}
+tools.picotool.cmd=rp2040load
+tools.picotool.upload.params.verbose=-v
+tools.picotool.upload.params.quiet=
+tools.picotool.upload.pattern="{path}/{cmd}" {upload.verbose} -D "{build.path}/{build.project_name}.elf"
+tools.gdb.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+tools.gdb.cmd=arm-none-eabi-gdb.exe
+tools.gdb.cmd.windows=arm-none-eabi-gdb.exe
+tools.gdb.debug.pattern="{path}/{cmd}" --interpreter=mi2 -ex "set pagination off" --baud 115200 -ex "set target-charset ASCII" -ex "target remote {debug.port}" {build.path}/{build.project_name}.elf
+upload.verify=
+tools.vmopenocd.cmd=bin/openocd.exe
+tools.vmopenocd.cmd.windows=bin/openocd.exe
+tools.vmopenocd.debug.params.verbose=-d2
+tools.vmopenocd.debug.params.quiet=-d0
+tools.vmopenocd.debug.address=localhost:3333
+tools.vmopenocd.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.vmopenocd.scriptPath=-s "{path}/scripts/"
+tools.vmopenocd.logging=-l "{{build.path}/{build.project_name}_DebugOpenOCD.log}"
+tools.vmopenocd.boardCmd=
+tools.vmopenocd.targetCmd=
+tools.vmopenocd.initCmd=
+tools.vmopenocd.debug.pattern="{path}/{cmd}" {debug.verbose} {logging} {scriptPath} {boardCmd} {targetCmd} {initCmd}
+tools.vmopenocd.program.cmd=bin/openocd.exe
+tools.vmopenocd.program.cmd.windows=bin/openocd.exe
+tools.vmopenocd.program.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.vmopenocd.program.address=localhost:3333
+tools.vmopenocd.program.params.verbose=-d2
+tools.vmopenocd.program.params.quiet=-d0
+tools.vmopenocd.program.elf.message=****[vMicro]**** Uploading ELF :
+tools.vmopenocd.program.pattern="{path}/{cmd}" {program.verbose} {scriptPath} {boardCmd} {targetCmd} -c "echo -n {{program.elf.message}}" {programCmd}
+tools.atmelICE.protocol=
+tools.atmelICE.debug.cmd=arm-none-eabi-gdb.exe
+tools.atmelICE.debug.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.atmelICE.debug.pattern="{path}/{cmd}"
+tools.atmelICE.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.atmelICE.server.initCmd=-c "init"
+tools.atmelICE.server.boardCmd=-c "adapter driver cmsis-dap" -c "cmsis_dap_vid_pid 0x03eb 0x2141"
+tools.atmelICE.server.tool=vmopenocd
+tools.atmelICE.debug.server=vmopenocd
+tools.atmelICE.program.scriptPath=-s "{program.path}/scripts/"
+tools.atmelICE.program.boardCmd=-c "adapter driver cmsis-dap" -c "cmsis_dap_vid_pid 0x03eb 0x2141"
+tools.atmelICE.program.cmd=bin/openocd.exe
+tools.atmelICE.program.cmd.windows=bin/openocd.exe
+tools.atmelICE.program.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.atmelICE.program.address=localhost:3333
+tools.atmelICE.program.params.verbose=-d2
+tools.atmelICE.program.params.quiet=-d0
+tools.atmelICE.program.elf.message=****[vMicro]**** Uploading ELF :
+tools.atmelICE.program.pattern="{program.path}/{program.cmd}" {program.verbose} {program.scriptPath} {program.boardCmd} {program.targetCmd} -c "echo -n {{program.elf.message}}" {program.programCmd}
+tools.atmelICE.program.extra_params=
+tools.atmelICE.program.protocol=
+tools.atmelICE.erase.params.verbose=-d3
+tools.atmelICE.erase.params.quiet=-d0
+tools.atmelICE.erase.pattern=
+tools.jlink.cmd=arm-none-eabi-gdb.exe
+tools.jlink.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.jlink.pattern="{path}/{cmd}"
+tools.jlink.server.tool=vmopenocd
+tools.jlink.debug.server=vmopenocd
+tools.jlink.server.boardCmd=-f "interface/jlink.cfg"
+tools.jlink.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.jlink.server.initCmd=-c "init"
+tools.jlink.program.scriptPath=-s "{program.path}/scripts/"
+tools.jlink.program.boardCmd=-f "interface/jlink.cfg"
+tools.jlink.program.cmd=bin/openocd.exe
+tools.jlink.program.cmd.windows=bin/openocd.exe
+tools.jlink.program.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.jlink.program.address=localhost:3333
+tools.jlink.program.params.verbose=-d2
+tools.jlink.program.params.quiet=-d0
+tools.jlink.program.elf.message=****[vMicro]**** Uploading ELF :
+tools.jlink.program.pattern="{program.path}/{program.cmd}" {program.verbose} {program.scriptPath} {program.boardCmd} {program.targetCmd} -c "echo -n {{program.elf.message}}" {program.programCmd}
+tools.jlink.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.jlink.upload.boardCmd=-f "interface/jlink.cfg"
+tools.jlink.upload.cmd=bin/openocd.exe
+tools.jlink.upload.cmd.windows=bin/openocd.exe
+tools.jlink.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.jlink.upload.address=localhost:3333
+tools.jlink.upload.params.verbose=-d2
+tools.jlink.upload.params.quiet=-d0
+tools.jlink.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.jlink.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.bmp_upload.cmd=arm-none-eabi-gdb.exe
+tools.bmp_upload.debug.path={runtime.tools.arm-none-eabi-gcc.path}/bin/
+tools.bmp_upload.program.cmd=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.program.cmd.windows=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.program.path={runtime.tools.arm-none-eabi-gcc.path}
+tools.bmp_upload.upload.cmd=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.upload.cmd.windows=bin/arm-none-eabi-gdb.exe
+tools.bmp_upload.upload.path={runtime.tools.arm-none-eabi-gcc.path}
+tools.bmp_upload.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.bmp_upload.server.initCmd=-c "init"
+tools.bmp_upload.showLocalSerialPort=true
+tools.bmp_upload.debug.server=
+tools.stlinkv2.description=
+tools.stlinkv2.cmd=arm-none-eabi-gdb.exe
+tools.stlinkv2.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.stlinkv2.pattern="{path}/{cmd}"
+tools.stlinkv2.server.tool=vmopenocd
+tools.stlinkv2.debug.server=vmopenocd
+tools.stlinkv2.server.boardCmd=-f "interface/stlink.cfg"
+tools.stlinkv2.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.stlinkv2.server.initCmd=-c "init"
+tools.stlinkv2.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.stlinkv2.upload.boardCmd=-f "interface/stlink.cfg"
+tools.stlinkv2.upload.cmd=bin/openocd.exe
+tools.stlinkv2.upload.cmd.windows=bin/openocd.exe
+tools.stlinkv2.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.stlinkv2.upload.address=localhost:3333
+tools.stlinkv2.upload.params.verbose=-d2
+tools.stlinkv2.upload.params.quiet=-d0
+tools.stlinkv2.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.stlinkv2.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.stlinkv2.upload.extra_params=
+tools.stlinkv2.upload.protocol=
+tools.stlinkv2.protocol=
+tools.f2232mm.cmd=arm-none-eabi-gdb.exe
+tools.f2232mm.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.f2232mm.pattern="{path}/{cmd}" {args}
+tools.f2232mm.server.tool=vmopenocd
+tools.f2232mm.debug.server=vmopenocd
+tools.f2232mm.server.boardCmd=-f "interface/ftdi/minimodule.cfg"
+tools.f2232mm.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.f2232mm.server.initCmd=-c "init"
+tools.f2232mm.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.f2232mm.upload.boardCmd=-f "interface/ftdi/minimodule.cfg"
+tools.f2232mm.upload.cmd=bin/openocd.exe
+tools.f2232mm.upload.cmd.windows=bin/openocd.exe
+tools.f2232mm.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.f2232mm.upload.address=localhost:3333
+tools.f2232mm.upload.params.verbose=-d2
+tools.f2232mm.upload.params.quiet=-d0
+tools.f2232mm.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.f2232mm.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.f2232mm.upload.extra_params=
+tools.f2232mm.upload.protocol=
+tools.f2232mm.protocol=
+tools.f2232h.server.boardCmd=-f "interface/ftdi/minimodule-lowcost.cfg"
+tools.f2232h.cmd=arm-none-eabi-gdb.exe
+tools.f2232h.path={runtime.tools.arm-none-eabi-gcc.path}/bin
+tools.f2232h.pattern="{path}/{cmd}"
+tools.f2232h.server.tool=vmopenocd
+tools.f2232h.debug.server=vmopenocd
+tools.f2232h.server.initCmd=-c "init; reset halt"
+vs-cmd.Debug.AttachtoProcess.tools.f2232h.server.initCmd=-c "init"
+tools.f2232h.upload.scriptPath=-s "{upload.path}/scripts/"
+tools.f2232h.upload.boardCmd=-f "interface/ftdi/minimodule-lowcost.cfg"
+tools.f2232h.upload.cmd=bin/openocd.exe
+tools.f2232h.upload.cmd.windows=bin/openocd.exe
+tools.f2232h.upload.path={runtime.tools.openocd-0.10.0.20200213.path}
+tools.f2232h.upload.address=localhost:3333
+tools.f2232h.upload.params.verbose=-d2
+tools.f2232h.upload.params.quiet=-d0
+tools.f2232h.upload.elf.message=****[vMicro]**** Uploading ELF :
+tools.f2232h.upload.pattern="{upload.path}/{upload.cmd}" {upload.verbose} {upload.scriptPath} {upload.boardCmd} {upload.targetCmd} -c "echo -n {{upload.elf.message}}" {upload.programCmd}
+tools.f2232h.upload.extra_params=
+tools.f2232h.upload.protocol=
+tools.f2232h.protocol=
+vm.platform.root.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\zqkm1q4o.1e0\Micro Platforms\arduino16x
+cmsis-dap.name=ARM CMSIS-DAP compatible
+cmsis-dap.communication=USB
+cmsis-dap.protocol=
+cmsis-dap.program.protocol=
+cmsis-dap.program.tool=openocd
+cmsis-dap.program.extra_params=
+stlink.name=STMicroelectronics STLINK
+stlink.communication=USB
+stlink.protocol=
+stlink.program.protocol=
+stlink.program.tool=openocd
+stlink.program.extra_params=
+runtime.tools.openocd.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\openocd\0.11.0-arduino2
+runtime.tools.openocd-0.11.0-arduino2.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\openocd\0.11.0-arduino2
+runtime.tools.arm-none-eabi-gcc.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4
+runtime.tools.arm-none-eabi-gcc-7-2017q4.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\7-2017q4
+runtime.tools.bossac.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\bossac\1.9.1-arduino2
+runtime.tools.bossac-1.9.1-arduino2.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\bossac\1.9.1-arduino2
+runtime.tools.dfu-util.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\dfu-util\0.10.0-arduino1
+runtime.tools.dfu-util-0.10.0-arduino1.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\dfu-util\0.10.0-arduino1
+runtime.tools.rp2040tools.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\rp2040tools\1.0.2
+runtime.tools.rp2040tools-1.0.2.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\tools\rp2040tools\1.0.2
+runtime.tools.arduinoOTA.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.arduinoOTA-1.3.0.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avrdude.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avrdude-6.3.0-arduino17.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc-7.3.0-atmel3.6.1-arduino7.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.tools.tools-avr.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
+runtime.vm.boardinfo.id=nano33ble
+runtime.vm.boardinfo.name=nano33ble
+runtime.vm.boardinfo.desc=Arduino Nano 33 BLE
+runtime.vm.boardinfo.src_location=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0
+ide.hint=Use installed IDE (hardware, reference/help + libraries)
+ide.location.key=Arduino16x
+ide.location.ide.winreg=Arduino 1.6.x Application
+ide.location.sketchbook.winreg=Arduino 1.6.x Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.default.revision_name=1.8.13
+ide.default.version=10800
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=Arduino.h
+ide.exe_name=arduino
+ide.recipe.preproc.defines.flags=-w -x c++ -E -dM
+ide.platformswithoutpackage=false
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionGTEQ=160
+ide.exe=arduino.exe
+ide.builder.exe=arduinobuilder.exe
+ide.builder.name=Arduino Builder
+ide.hosts=atmel
+ide.url=https://www.visualmicro.com/page/Download-Arduino-Or-Other-Supporting-IDEs.aspx
+ide.help.reference.path=reference
+ide.help.reference.path2=reference\www.arduino.cc\en\Reference
+ide.help.reference.serial=reference\www.arduino.cc\en\Serial
+ide.location.preferences.portable={runtime.ide.path}\portable
+ide.location.preferences.arduinoData={runtime.sketchbook.path}\ArduinoData
+ide.location.preferences=%VM_APPDATA_LOCAL%\arduino15\preferences.txt
+ide.location.preferences_fallback=%VM_APPDATA_ROAMING%\arduino15\preferences.txt
+ide.location.contributions=%VM_APPDATA_LOCAL%\arduino15
+ide.location.contributions_fallback=%VM_APPDATA_ROAMING%\arduino15
+ide.contributions.boards.allow=true
+ide.contributions.boards.ignore_unless_rewrite_found=true
+ide.contributions.libraries.allow=true
+ide.contributions.boards.support.urls.wiki=https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+ide.create_platforms_from_boardsTXT.teensy=build.core
+vm.debug=true
+software=ARDUINO
+ssh.user.name=root
+ssh.user.default.password=arduino
+ssh.host.wwwfiles.path=/www/sd
+build.working_directory={runtime.ide.path}\java\bin
+runtime.tools.vm_web_debugger.path={vm.platform.root.path}/../../Micro Debuggers/WebDebugger
+recipe.hooks.vmdeploy.vm_web_debugger_postupload.1.pattern="{runtime.tools.vm_web_debugger.path}/DeployMicroWebserver.exe" "{sketch_path}" "{serial.port}" "{runtime.hardware.path}\.."
+recipe.hooks.vmlaunch.vm_web_debugger_preopen.1.pattern=notepad.exe "{sketch_path}\__vm\vmWebDebugger\Start-WebServer.bat"
+recipe.hooks.vmlaunch.vm_web_debugger_preopen.2.pattern={sketch_path}\__vm\vmWebDebugger\Start-WebServer.bat
+ide.debug_menu.debugger_type=Debug
+ide.debug_menu.debugger_type.none=Off
+ide.debug_menu.none.debug.tool=no_debug
+ide.debug_menu.debugger_type.universal=Serial
+ide.debug_menu.universal.debug.tool=universal
+ide.debug_menu.debugger_type.hwdebugger=Hardware
+ide.debug_menu.hwdebugger=Debugger
+ide.debug_menu.hwdebugger.custom_debugger=Manual/Custom
+ide.debug_menu.hwdebugger.custom_debugger.debug.tool=dbg_external
+ide.meta_custom_debugger.sentence=Provides a build that includes debug defines and will launch a custom debugger if one is provided.
+ide.meta_custom_debugger.paragraph=This is option is for advanced use. It is recommended that a pre-configured debugger be selected when available in this list. Usage: Optionally add a customer debugger to the project. A 'debugger_launch.json' file shares the same command syntax that is used by the VsCode debugger. Custom debuggers can be targeted at a board and/or variant and/or configuration name. IE: [variant].[configuration_name][.]debugger_launch.json
+ide.meta_custom_debugger.reference.usage.url=https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md#customlaunchsetupcommands
+ide.meta_custom_debugger.reference.connect.url=https://docs.microsoft.com/en-us/visualstudio/debugger/create-custom-views-of-native-objects?view=vs-2019
+ide.compiler_flags_no_opt=-O0
+ide.debug_menu.vm_disable_optimization=Disable Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_default=Default Optimization
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj=No Project  Optimization
+ide.debug_menu.vm_disable_opt_proj.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_proj_libs=No Project + Libraries Optimization
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_proj_libs.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_optimization.vm_disable_opt_all=No Optimization
+ide.meta_vm_disable_opt_all.sentence=Disable compiler optimization for all sources:- Project, Library and Platform.
+ide.meta_vm_disable_opt_all.comment=After switching between 'No Optimization' and other optimization values, please click "Solution Clean" or switch off (or cycle) 'vMicro&gt;Compiler&gt;Shared Cache For Cores'. NOTE: Changing optimization settings can cause build errors or result in overly large programs.
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_project={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_libraries={ide.compiler_flags_no_opt}
+ide.debug_menu.vm_disable_opt_all.vm_disable_opt_core={ide.compiler_flags_no_opt}
+ide.appid=arduino16x
+location.sketchbook=C:\Users\fabio\Documents\Arduino
+build.core.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0\cores\arduino
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0
+runtime.platform.path=C:\Users\fabio\AppData\Local\arduino15\packages\arduino\hardware\mbed_nano\2.2.0
+vm.platformname.name=mbed_nano
+build.arch=MBED_NANO
+</arduino.board.property_bag>
+        <arduino.build.mcu>cortex-m4</arduino.build.mcu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.maximum_size>983040</arduino.upload.maximum_size>
+        <visualmicro.application.name>arduino16x</visualmicro.application.name>
+        <visualmicro.package.name>arduino</visualmicro.package.name>
+        <visualmicro.platform.name>mbed_nano</visualmicro.platform.name>
+        <config.Debug.customdebug_nano33ble_debugger_type>universal</config.Debug.customdebug_nano33ble_debugger_type>
+        <arduino.upload.port>COM5</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="eFall.ino">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MIDDLE.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MIDDLE.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="__vm\.eFall.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="__vm\" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
