@@ -8,7 +8,6 @@
 	Hardware: Arduino Nano 33 BLE, Platform=mbed_nano, Package=arduino
 */
 
-#define _VMDEBUG 1
 #define ARDUINO 108013
 #define ARDUINO_MAIN
 #define printf iprintf
