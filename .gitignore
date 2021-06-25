@@ -448,3 +448,5 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/atmelstudio,visualstudio,c++
+eFall/eFall/__vm/.eFall.vsarduino.h
+eFall/eFall/__vm/Compile.vmps.xml
