@@ -7,7 +7,7 @@ MIDDLE::MIDDLE() {
 }
 
 float MIDDLE::getX() {
-	return x;
+	return this->x;
 }
 
 void MIDDLE::setX(float x) {
