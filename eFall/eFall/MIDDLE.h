@@ -3,7 +3,7 @@
 #include <Arduino_LSM9DS1.h>
 #include <math.h>
 
-#define FIFO_SIZE 256
+#define FIFO_SIZE 255
 
 class MIDDLE {
  private:
@@ -13,7 +13,12 @@ class MIDDLE {
 	float fifoZ[FIFO_SIZE];
 	float fifoA[FIFO_SIZE];
 	float fifoM[FIFO_SIZE];
-
+	int indexX = 0;
+	int indexY = 0;
+	int indexZ = 0;
+	int indexA = 0;
+	int indexM = 0;
+	float lastA = 0;
 
  public:
 	MIDDLE();

@@ -15,17 +15,17 @@ void setup() {
 	if (state)
 		Serial.println("IMU initialized");
 	else
-		Serial.println("IMU Error");		
+		Serial.println("IMU Error");
 }
 
 void loop() {
 	
-	middle.begin();
 	middle.readValues();
 	middle.feedFifoX(middle.getX());
 	middle.feedFifoY(middle.getY());
 	middle.feedFifoZ(middle.getZ());
 	middle.feedFifoA();
+	middle.feedFifoM();
 	
 	if (Serial.available() > 0) {
 		switch (Serial.read()) {
@@ -35,7 +35,6 @@ void loop() {
 			break;
 		case '2':
 			Serial.println("Carregaste no 2");
-			middle.feedFifoM();
 			middle.printFifoM();
 			break;
 		case '3':

@@ -1,16 +1,13 @@
 #include "MIDDLE.h"
 
-int indiceX = 0;
-int indiceY = 0;
-int indiceZ = 0;
-int indiceM = 0;
+
 
 MIDDLE::MIDDLE() {
 
 }
 
 float MIDDLE::getX() {
-	return this->x;
+	return x;
 }
 
 void MIDDLE::setX(float x) {
@@ -77,39 +74,37 @@ float MIDDLE::getFifoM(int pos) {
 }
 
 void MIDDLE::feedFifoX(float x) {
-	if (indiceX == FIFO_SIZE) indiceX = 0;
-	this->fifoX[indiceX] = x;
-	indiceX++;
+	if (indexX == FIFO_SIZE) indexX = 0;
+	this->fifoX[indexX] = x;
+	indexX++;
 }
 
 void MIDDLE::feedFifoY(float y) {
-	if (indiceY == FIFO_SIZE) indiceY = 0;
-	this->fifoY[indiceY] = y;
-	indiceY++;
+	if (indexY == FIFO_SIZE) indexY = 0;
+	this->fifoY[indexY] = y;
+	indexY++;
 }
 
 void MIDDLE::feedFifoZ(float z) {
-	if (indiceZ == FIFO_SIZE) indiceZ = 0;
-	this->fifoZ[indiceZ] = z;
-	indiceZ++;
+	if (indexZ == FIFO_SIZE) indexZ = 0;
+	this->fifoZ[indexZ] = z;
+	indexZ++;
 }
 
 void MIDDLE::feedFifoA(void) {
-	for (int i = 0; i < 256; i++) {
-		float a = sqrt((pow(this->fifoX[i], 2) + pow(this->fifoY[i], 2) + pow(this->fifoZ[i], 2)));
-		fifoA[i] = a;
-	}
+	if (indexA == FIFO_SIZE) indexA = 0;
+	lastA = this->fifoA[indexA];
+	float a = sqrt((pow(this->fifoX[indexA], 2) + pow(this->fifoY[indexA], 2) + pow(this->fifoZ[indexA], 2)));
+	this->fifoA[indexA] = a;
+	indexA++;
 }
 
 void MIDDLE::feedFifoM(void) {
-	if (indiceM == FIFO_SIZE) indiceM = 0;
-	float aSum = 0;
-	for (int i = 0; i < FIFO_SIZE; i++) {
-		aSum += this->fifoA[i];
-	}
-	this->fifoM[indiceM] = aSum / FIFO_SIZE;
-	indiceM++;
-	
+	if (indexM == FIFO_SIZE) indexM = 0;
+	float lastM = this->fifoM[indexM - 1];
+	float newM = lastM - (lastA / FIFO_SIZE) + (this->fifoA[indexA] / FIFO_SIZE);
+	this->fifoM[indexM] = newM;
+	indexM++;
 }
 
 void MIDDLE::printFifos() {
