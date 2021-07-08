@@ -1,15 +1,17 @@
-#include "MIDDLE.h"
+#include "Middle.h"
 #include "NRF52_MBED_TimerInterrupt.h"
 #include "NRF52_MBED_ISR_Timer.h"
 
 // Timer Configs
-#define TIMER_INTERVAL_MS 10
+#define TIMER_INTERVAL_MS 1
 NRF52_MBED_Timer ITimer(NRF_TIMER_3);
 NRF52_MBED_ISR_Timer ISR_Timer;
 volatile char flagTimer = 0;
+volatile char flag2Seconds = 0;
+volatile int timerCounter = 0;
 
 // MIDDLE class instance
-MIDDLE middle = MIDDLE();
+Middle middle = Middle();
 
 void setup() {
 	// SERIAL Initialization
@@ -35,12 +37,12 @@ void setup() {
 
 void loop() {
 	
-	if (flagTimer == 1) {	
-		middle.readValues();
-		middle.feedFifoA();
-		middle.feedFifoM();
+	if (flagTimer == 1) {
 		flagTimer = 0;
 	}
+	
+	middle.readValues();
+	middle.feedFifos(flag2Seconds);
 	
 	if (Serial.available() > 0) {
 		switch (Serial.read()) {
@@ -63,5 +65,12 @@ void timerHandler() {
 }
 
 void changeFlagTimer() {
+	if (timerCounter == 2000) {
+		flag2Seconds = 1;
+		timerCounter = 0;
+	} else {
+		flag2Seconds = 0;
+		timerCounter++;
+	}
 	flagTimer = 1;
 }

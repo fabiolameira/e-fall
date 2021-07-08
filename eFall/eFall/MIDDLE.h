@@ -5,33 +5,29 @@
 
 #define FIFO_SIZE 255
 
-class MIDDLE {
- private:
+#define IDDLE 1
+#define PRE_FALL 2
+#define FALL 3
+
+class Middle {
+private:
 	float x, y, z;
 	float fifoA[FIFO_SIZE];
 	float fifoM[FIFO_SIZE];
-	int indexA = 0;
-	int indexM = 0;
-	float lastA = 0;
+	int index;
+	char state;
 
- public:
-	MIDDLE();
-	float getX(void);
-	void setX(float x);	
-	float getY(void);
-	void setY(float y);
-	float getZ(void);
-	void setZ(float z);
+public:
+	Middle();
+	
+	char getState(void);
 	
 	int begin(void);
 	int end(void);
 	void readValues(void);
 	
-	float getFifoA(int pos);
-	float getFifoM(int pos);
-
-	void feedFifoA(void);
-	void feedFifoM(void);
+	void feedFifos(char flag2Seconds);
+	void handleState(float m, char flag2Seconds);
 	
 	void printFifoA(void);
 	void printFifoM(void);
