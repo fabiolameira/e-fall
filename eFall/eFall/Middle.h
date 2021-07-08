@@ -16,19 +16,15 @@ private:
 	float fifoM[FIFO_SIZE];
 	int index;
 	char state;
-
+	
+	void handleState(float m, char flag2Seconds);
 public:
 	Middle();
-	
 	char getState(void);
-	
 	int begin(void);
 	int end(void);
 	void readValues(void);
-	
-	void feedFifos(char flag2Seconds);
-	void handleState(float m, char flag2Seconds);
-	
+	void feedFifos(char flag2Seconds);	
 	void printFifoA(void);
 	void printFifoM(void);
 };

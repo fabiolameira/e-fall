@@ -40,24 +40,23 @@ void loop() {
 	if (flagTimer == 1) {
 		flagTimer = 0;
 	}
-	
 	middle.readValues();
 	middle.feedFifos(flag2Seconds);
 	
-	if (Serial.available() > 0) {
-		switch (Serial.read()) {
-			case '1':
-				Serial.println("Carregaste no 1");
-				middle.printFifoA();
-				break;
-			case '2':
-				Serial.println("Carregaste no 2");
-				middle.printFifoM();
-				break;
-			default:
-				break;
-		}
-	}
+	//if (Serial.available() > 0) {
+		//switch (Serial.read()) {
+			//case '1':
+				//Serial.println("Carregaste no 1");
+				//middle.printFifoA();
+				//break;
+			//case '2':
+				//Serial.println("Carregaste no 2");
+				//middle.printFifoM();
+				//break;
+			//default:
+				//break;
+		//}
+	//}
 }
 
 void timerHandler() {
@@ -65,12 +64,15 @@ void timerHandler() {
 }
 
 void changeFlagTimer() {
-	if (timerCounter == 2000) {
-		flag2Seconds = 1;
-		timerCounter = 0;
+	if (middle.getState() == PRE_FALL) {
+		if (timerCounter == 2000) {
+			flag2Seconds = 1;
+			timerCounter = 0;
+		} else {
+			timerCounter++;	
+		}
 	} else {
 		flag2Seconds = 0;
-		timerCounter++;
 	}
 	flagTimer = 1;
 }
