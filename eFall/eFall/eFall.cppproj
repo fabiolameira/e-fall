@@ -1114,10 +1114,10 @@ build.arch=MBED_NANO
     <Compile Include="eFall.ino">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MIDDLE.h">
+    <Compile Include="Middle.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="MIDDLE.cpp">
+    <Compile Include="Middle.cpp">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="__vm\.eFall.vsarduino.h">
