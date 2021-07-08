@@ -37,9 +37,6 @@ void loop() {
 	
 	if (flagTimer == 1) {	
 		middle.readValues();
-		middle.feedFifoX(middle.getX());
-		middle.feedFifoY(middle.getY());
-		middle.feedFifoZ(middle.getZ());
 		middle.feedFifoA();
 		middle.feedFifoM();
 		flagTimer = 0;
@@ -49,14 +46,11 @@ void loop() {
 		switch (Serial.read()) {
 			case '1':
 				Serial.println("Carregaste no 1");
-				middle.printFifos();
+				middle.printFifoA();
 				break;
 			case '2':
 				Serial.println("Carregaste no 2");
 				middle.printFifoM();
-				break;
-			case '3':
-				Serial.println("Carregaste no 3");
 				break;
 			default:
 				break;
