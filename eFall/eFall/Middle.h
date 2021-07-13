@@ -2,6 +2,7 @@
 #define _MIDDLE_H 1
 #include <Arduino_LSM9DS1.h>
 #include <math.h>
+#include "App.h"
 
 #define FIFO_SIZE 255
 

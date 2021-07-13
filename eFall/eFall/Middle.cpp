@@ -1,4 +1,5 @@
 #include "Middle.h"
+#include "App.h"
 
 Middle::Middle() {
 	this->index = 0;
@@ -38,31 +39,25 @@ void Middle::feedFifos(char flag2Seconds) {
 	float newM = lastM - (lastA / FIFO_SIZE) + (fifoA[index] / FIFO_SIZE);
 	fifoM[index] = newM;
 	
-	this->handleState(newM, flag2Seconds);
-	// Serial.println((String) newM + ";");
-	
+	this->handleState(newM, flag2Seconds);	
 	index++;
 }
 
-void Middle::handleState(float m, char flag2Seconds) {
+void Middle::handleState(float m, char flagInterval) {
 	if (state == IDDLE && m < 0.5) {
 		state = PRE_FALL;
-		Serial.println("STATE: PRE_FALL");
 	}
 	if (state == PRE_FALL) {
 		if (m > 1.8) {
 			state = FALL;
-			Serial.println("STATE: FALL");
 		} 
-		else if (flag2Seconds == 1) {
+		else if (flagInterval == 1) {
 			state = IDDLE;
-			Serial.println("STATE: IDDLE");
 		}
 	}
-	if (state == FALL) {
+	if (state == FALL && flagInterval == 1) {
 		state = IDDLE;
-		Serial.println("STATE: IDDLE");
-	}
+	}	
 }
 
 void Middle::printFifoA() {
