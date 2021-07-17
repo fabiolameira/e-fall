@@ -1111,6 +1111,12 @@ build.arch=MBED_NANO
     </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="App.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="App.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="eFall.ino">
       <SubType>compile</SubType>
     </Compile>

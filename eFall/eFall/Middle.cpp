@@ -1,23 +1,44 @@
-#include "Middle.h"
-#include "App.h"
+/** @brief Middle.h class implementation
+    Used to read acceleration in x, y and z axis, and detect the fall.
+    @author Fabio Lameira, Celsio Gil, Luis Duarte Marques.
+    @date July 2021
+*/
 
+/**
+  Code adapted from third-party Arduino library:
+  https://www.arduino.cc/en/Reference/ArduinoLSM9DS1
+*/
+
+#include "Middle.h"
+
+/** Middle() is a default constructor:
+	Initialize index with 0.
+	Initialize state with IDDLE.
+*/
 Middle::Middle() {
 	this->index = 0;
-	this->state = IDDLE;
+	this->state = STATE_IDDLE;
 }
 
+/** getState() public method:
+	Get value stored in state attribute.
+	@return state.
+*/
 char Middle::getState() {
 	return this->state;
 }
 
+/** begin() public method:
+	Initializes IMU to start reading acceleration in different axis.
+	@return succesCode.
+*/
 int Middle::begin() {
 	return IMU.begin();
 }
 
-int Middle::end() {
-	IMU.end();
-}
-
+/** readValues() public method:
+	Verify if IMU accelerations are available, and store them into x, y, and z attributes.
+*/
 void Middle::readValues() {
 	float x, y, z;
 	if (IMU.accelerationAvailable()) {
@@ -28,7 +49,13 @@ void Middle::readValues() {
 	}
 }
 
-void Middle::feedFifos(char flag2Seconds) {
+/** feedFifos() public method:
+	Use the x, y, and z accelerations to calculate the total acceleration and put that in fifoA array (FirstInFirstOut).
+	Use the total acceleration values in fifoA to calculate the moving median and store that in fifoM array.
+	Call handleState() method to change the device state according to the new moving median.
+	@param flagInterval (Used to change from PRE_FALL to IDDLE state when some time have passed).
+*/
+void Middle::feedFifos(char flagInterval) {
 	if (index == FIFO_SIZE) index = 0;
 	
 	float lastA = fifoA[index];
@@ -39,35 +66,31 @@ void Middle::feedFifos(char flag2Seconds) {
 	float newM = lastM - (lastA / FIFO_SIZE) + (fifoA[index] / FIFO_SIZE);
 	fifoM[index] = newM;
 	
-	this->handleState(newM, flag2Seconds);	
+	this->handleState(newM, flagInterval);	
 	index++;
 }
 
+/** handleState() private method:
+	When state is IDDLE and new moving median is less then MIN_THRESHOLD, change the state to PRE_FALL.
+	When state is PRE_FALL and new moving median is more than MAX_THRESHOLD, change the state to FALL.
+	When state is PRE_FALL and flagInterval its TRUE, change the state back to IDDLE.
+	When state is FALL and flagInterval its TRUE, change the state back to IDDLE.
+	@param m (new moving median).
+	@param flagInterval (Used to change from PRE_FALL to IDDLE state when some time have passed).
+*/
 void Middle::handleState(float m, char flagInterval) {
-	if (state == IDDLE && m < 0.5) {
-		state = PRE_FALL;
+	if (state == STATE_IDDLE && m < MIN_THRESHOLD) {
+		state = STATE_PRE_FALL;
 	}
-	if (state == PRE_FALL) {
-		if (m > 1.8) {
-			state = FALL;
+	if (state == STATE_PRE_FALL) {
+		if (m > MAX_THRESHOLD) {
+			state = STATE_FALL;
 		} 
-		else if (flagInterval == 1) {
-			state = IDDLE;
+		else if (flagInterval == TRUE) {
+			state = STATE_IDDLE;
 		}
 	}
-	if (state == FALL && flagInterval == 1) {
-		state = IDDLE;
+	if (state == STATE_FALL && flagInterval == TRUE) {
+		state = STATE_IDDLE;
 	}	
-}
-
-void Middle::printFifoA() {
-	for (int i = 0; i < FIFO_SIZE; i++) {
-		Serial.println(" A: " + (String) fifoA[i]);
-	}
-}
-
-void Middle::printFifoM() {
-	for (int i = 0; i < FIFO_SIZE; i++) {
-		Serial.println(" M: " + (String) fifoM[i]);
-	}
 }
